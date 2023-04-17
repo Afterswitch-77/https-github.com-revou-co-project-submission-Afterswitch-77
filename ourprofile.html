@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="ourprofile.css" />
+    <title>IT Academy x Revou</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="topnav" id="myTopnav">
+      <img
+        src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/a32f81155cd0d4f16d36aef74f7d2644.png"
+        alt="ini gambar"
+      />
+
+      <a href="message.html">Message</a>
+      <a href="acievement.html">Acievement</a>
+      <a href="ourprofile.html" class="active">Our Profile</a>
+      <a href="index.html">Home</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunctionNavbar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- end Of Navbar -->
+    <div class="container">
+      <h1>IT Academy x Revou</h1>
+      <p>adalah wadah bagi peminat teknologi</p>
+      <h2>Visi</h2>
+      <p>mewadahi minat anak bangsa di bidang teknologi.</p>
+      <div class="misi">
+        <h2>Misi</h2>
+        <p>memajukan kecerdasan bangsa.</p>
+      </div>
+    </div>
+  </body>
+  <script>
+    function myFunctionNavbar() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+    function myFunctionInputName() {
+      let person = prompt("Please enter your name", "Harry Potter");
+      if (person != null) {
+        document.getElementById("index.html/demo").innerHTML =
+          "Hello " + person + "! Welcome to IT Academy x RevoU";
+      }
+    }
+  </script>
+</html>

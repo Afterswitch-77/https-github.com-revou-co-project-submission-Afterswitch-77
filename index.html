@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>IT Academy</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="topnav" id="myTopnav">
+      <img
+        src="https://images.glints.com/unsafe/glints-dashboard.s3.amazonaws.com/company-logo/a32f81155cd0d4f16d36aef74f7d2644.png"
+        alt="ini gambar"
+      />
+
+      <a href="#message">Message</a>
+      <a href="acievement.html">Acievement</a>
+      <a href="ourprofile.html">Our Profile</a>
+      <a href="#home" class="active" onclick="myFunctionInputName()">Home</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunctionNavbar()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <!-- end Of Navbar -->
+
+    <section id="home">
+      <button onclick="myFunctionInputName()">click me</button>
+      <h1 id="demo" style="text-align: left"></h1>
+      <p style="text-align: left">ini adalah website latihan pertama</p>
+      <!-- Slideshow container -->
+      <div class="slideshow-container">
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 3</div>
+          <img
+            src="https://www.mployee.id/wp-content/uploads/2021/10/profesi-software-engineering.jpg"
+            style="width: 100%"
+          />
+          <div class="text">Sofeware Engineer</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 3</div>
+          <img
+            src="https://cdn.antaranews.com/cache/800x533/2020/04/04/hacker-peretas.jpg"
+            style="width: 100%"
+          />
+          <div class="text">Cyber Security</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 3</div>
+          <img
+            src="https://www.seputarit.com/wp-content/uploads/2015/10/sejarah-jaringan-komputer.jpg"
+            style="width: 100%"
+          />
+          <div class="text">Networking Engineer</div>
+        </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br />
+
+      <!-- The dots/circles -->
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </section>
+
+    <section id="our-profile">
+      <h1 style="text-align: left">Our Facilitaions</h1>
+
+      <div class="card-container">
+        <div class="card">
+          <img
+            src="https://c.ndtvimg.com/2023-02/37q1p9mk_elon-musk_625x300_18_February_23.jpg"
+            alt="Gambar 1"
+          />
+          <h3>Profesional Teacher</h3>
+        </div>
+        <div class="card">
+          <img
+            src="https://i.pinimg.com/736x/fb/16/5b/fb165b50a6779e6bce9aa3af0e2cafbc.jpg"
+            alt="Gambar 2"
+          />
+          <h3>Sport Field</h3>
+        </div>
+        <div class="card">
+          <img
+            src="https://www.innovadesigngroup.co.uk/wp-content/uploads/2014/10/Homepage-Southlands-ICT-opt.jpg"
+            alt="Gambar 3"
+          />
+          <h3>Clasroom</h3>
+        </div>
+      </div>
+    </section>
+    <!-- message -->
+    <h1 style="text-align: left">Message us</h1>
+    <form id="message-form" style="text-align: left">
+      <div class="form-group">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="birthdate">Tanggal Lahir:</label>
+        <input type="date" id="birthdate" name="birthdate" required />
+      </div>
+      <div class="form-group">
+        <label>Jenis Kelamin:</label>
+        <label>
+          <input type="radio" name="gender" value="Laki-laki" required />
+          Laki-laki
+        </label>
+        <label>
+          <input type="radio" name="gender" value="Perempuan" required />
+          Perempuan
+        </label>
+      </div>
+      <div class="form-group">
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit">Kirim</button>
+    </form>
+
+    <div id="form-output"></div>
+    <!-- end of message -->
+    <section id="footer">
+      <footer style="text-align: right">
+        Created by chadek windy septyawan
+      </footer>
+    </section>
+  </body>
+  <script>
+    function myFunctionNavbar() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+
+    function myFunctionInputName() {
+      let person = prompt("Please enter your name", "Harry Potter");
+      if (person != null) {
+        document.getElementById("demo").innerHTML =
+          "Hello " + person + "! Welcome to IT Academy x RevoU";
+      }
+    }
+
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      let dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    const form = document.getElementById("message-form");
+    const formOutput = document.getElementById("form-output");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const birthdate = document.getElementById("birthdate").value;
+      const gender = document.querySelector(
+        'input[name="gender"]:checked'
+      ).value;
+      const message = document.getElementById("message").value;
+
+      const outputHTML = `
+    <p><strong>Nama:</strong> ${name}</p>
+    <p><strong>Tanggal Lahir:</strong> ${birthdate}</p>
+    <p><strong>Jenis Kelamin:</strong> ${gender}</p>
+    <p><strong>Pesan:</strong> ${message}</p>
+  `;
+
+      formOutput.innerHTML = outputHTML;
+      form.reset();
+    });
+  </script>
+</html>
